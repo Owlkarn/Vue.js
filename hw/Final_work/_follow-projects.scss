@@ -1,0 +1,90 @@
+.follow-block {
+  &__title {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: center;
+    margin-bottom: 8px;
+  };
+  &__text {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 93px;
+  }
+}
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  row-gap: 54px;
+}
+
+.project {
+  max-width: 550px;
+  height: 620px;
+  &__img {
+    height: 525px;
+    background-clip: content-box;
+    margin-bottom: 28px;
+    &_first {
+      background-image: url("./img/project_1.png");
+      background-position: -100px -275px;
+      border-radius: 0px 80px 0px 0px;
+    };
+    &_second {
+      background-image: url("./img/project_2.png");
+      background-position: -55px -455px;
+      border-radius: 80px 0px 0px 0px;
+    };
+    &_third {
+      background-image: url("./img/project_3.png");
+      background-position: -75px -175px;
+      border-radius: 0px 0px 80px 0px;
+    };
+    &_fourth {
+      background-image: url("./img/project_4.png");
+      background-position: -132px -275px;
+      border-radius: 0px 0px 0px 80px;
+    };
+  };
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  };
+
+  &__subscribe {
+    &_title {
+      color: rgb(41, 47, 54);
+      font-family: DM Serif Display;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 125%;
+      text-align: left;
+      margin-bottom: 4px;
+    };
+
+    &_text {
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+    }
+  };
+
+  &__btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(244, 240, 236);
+  };
+}

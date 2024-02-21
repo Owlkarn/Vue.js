@@ -1,0 +1,21 @@
+.header {
+  padding-top: 53px;
+  padding-bottom: 57px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__right {
+    display: flex;
+    width: 243px;
+    justify-content: space-between;
+    &_link {
+      color: rgb(41, 47, 54);
+      font-family: Jost, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 125%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>{{ message }}</h1>
+    <p>Товаров в корзине {{ itemsInCart }}</p>
+    <button v-for="item in items" :key="item.id" @click="increase(item)">{{ item.text }}</button>
+    <div></div>
+    <button v-for="btn in buttons" :key="btn.id" @click="getAccess(btn.access)">{{ btn.name }}</button>
+    <p v-if="showItems && accessToItems">Можете заказать товар</p>
+    <p v-else-if="showItems && !accessToItems">Доступ закрыт</p>
+    <div></div>
+    <button @click="getContent()">Show more</button>
+    <transition name="fade">
+        <p v-show="showContent">1234567890poiuytrewasdfghjkl,mnbvcxdfhhjreghjhgferjhgfrewerthjhgtfrewerjhgewertjkhgfwerthjkhgf
+        erghtnhgfhjhkhgfhjhgfhjkhgfwhjkhgfwhjkhgfhjkhgfdfhj,jmhgfdghjmhhgfdhj
+        fghjgfdsghjkhgfdfghjkjhgfdfghjkhgfddfghjkhgfddfghjkhgf
+        ghjhgfdsdfghjkhgfdsdfghjkhgfdsdfghjkhgfdsdfghjkhgfddfghjkhgfdsdfghgj
+        sfghjgfdsadfghjkhgfdsdfghjkbhgfdsdghjkhgfddfghjmk,jhgfdfghmj</p>
+    </transition>
+    <div></div>
+    <button @click="getRandomNumber()">Генерировать случайное число</button>
+    <p>{{ randomNumber }}</p>
+    <p v-if="randomNumber < 5">Число меньше 5</p>
+    <p v-else-if="randomNumber >= 5 && randomNumber <= 9">Число от 5 до 9</p>
+    <p v-else-if="randomNumber === 10">Число равно 10</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            message: 'Hello Vue',
+            itemsInCart: 0,
+            accessToItems: null,
+            showItems: false,
+            showContent: false,
+            randomNumber: undefined,
+            items: [
+                { id: 1, text: 'Купить', added: false },
+                { id: 2, text: 'Купить', added: false },
+                { id: 3, text: 'Купить', added: false },
+                { id: 4, text: 'Купить', added: false }
+            ],
+            buttons: [
+                { id: 1, name: 'Мне исполнилось 14 лет', access: true },
+                { id: 2, name: 'Мне еще нет 14 лет', access: false }
+            ]
+        },
+        methods: {
+            increase(item) {
+                if (!item.added) {
+                    this.itemsInCart++;
+                    item.text = 'Товар в Корзине';
+                    item.added = true;
+                }
+
+            },
+            getAccess(access) {
+                this.accessToItems = access;
+                this.showItems = true;
+            },
+            getContent() {
+                this.showContent = !this.showContent;
+            },
+            getRandomNumber() {
+                this.randomNumber = Math.floor(Math.random() * 10) + 1;
+            }
+        }
+    })
+</script>
+</body>
+</html>
+<!--Задание 1-->
+<!--1. Установить расширение-->
+<!--a. Vue VSCode Snippets-->
+<!--b. Vue Language Features (Volar)-->
+<!--2. Создать новый файл index.html, добавить структуру-->
+<!--3. Подключить vue к проекту-->
+<!--4. Вывести на экран Hello Vue-->
+
+<!--Задание 2-->
+<!--1. Создать параграф, внутри которого будет отображаться текст-->
+<!--“Товаров в корзине 0”-->
+<!--2. Создать кнопку “Купить”, при клике на которую, значение внутри-->
+<!--параграфа будет увеличиваться на 1, при повторном нажатии на эту-->
+<!--кнопку, счетчик не становится больше, добавить 4 таких кнопки-->
+<!--3. При нажатии на кнопку купить, необходимо чтобы текст внутри-->
+<!--кнопки поменялся на “Товар в Корзине”-->
+
+<!--Задание 3-->
+<!--1. Создать две кнопки “Мне исполнилось 14 лет” и “Мне еще нет 14 лет”-->
+<!--2. Если пользователь нажимает на первую кнопку, то должен-->
+<!--отобразиться текст. “Можете заказать товар”-->
+<!--3. Если пользователь нажимает на вторую кнопку, отображается текст-->
+<!--“Доступ закрыт”-->
+
+<!--Задание 4-->
+<!--1. Создать кнопку “Показать еще” при клике на которую появляется-->
+<!--контент под кнопкой, при повторном клике, контент необходимо-->
+<!--скрыть-->
+<!--2. Добавить анимацию появления текстового блока-->
+
+<!--Задание 5-->
+<!--1. Создайте кнопку "Генерировать случайное число". При клике на-->
+<!--кнопку должно отображаться случайное число в заданном диапазоне-->
+<!--(например, от 1 до 10).-->
+<!--2. При клике на кнопку, если полученное значение меньше 5,-->
+<!--необходимо вывести на страницу, “Число меньше 5”-->
+<!--3. Если число от 5 до 9, необходимо вывести “Число от 5 до 9”-->
+<!--4. Если число равно 10, необходимо вывести “Число ранов 10”-->
