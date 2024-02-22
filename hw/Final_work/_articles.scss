@@ -1,0 +1,111 @@
+.articles-block {
+  margin-bottom: 96px;
+  &__title {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: center;
+    padding-bottom: 12px;
+  };
+  &__text {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    padding-bottom: 52px;
+  };
+  &__articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr));
+    grid-gap: 20px;
+  };
+  &__article {
+    height: 521px;
+    padding: 21px;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 62px;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+  };
+  &__article-second {
+    background: rgb(244, 240, 236);
+  };
+};
+.article {
+  &__design {
+    &_img {
+      width: 340px;
+      height: 290px;
+      padding-top: 228px;
+      padding-left: 20px;
+      margin-bottom: 13px;
+    };
+    &_name {
+      border-radius: 8px 8px 8px 0px;
+      background: rgb(255, 255, 255);
+      width: 124px;
+      height: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+    };
+  };
+  &__title {
+    margin-bottom: 18px;
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: left;
+    width: 81%;
+  };
+  &__date-and-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_date {
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+      text-transform: capitalize;
+    };
+    &_btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      background: rgb(244, 240, 236);
+    };
+  };
+};
+.first-article-img {
+  background-image: url(./img/article_1.png);
+  background-position: -160px -63px;
+  border-radius: 45px 45px 0px 0px;
+};
+.second-article-img {
+  background-image: url(./img/article_2.png);
+  background-position: -120px -45px;
+  border-radius: 45px 45px 0px 0px;
+};
+.third-article-img {
+  background-image: url(./img/article_3.png);
+  background-position: -325px -140px;
+  border-radius: 45px 45px 0px 0px;
+};
+.second-article-btn {
+  background: rgb(255, 255, 255);
+}

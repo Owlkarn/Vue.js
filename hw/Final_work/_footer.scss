@@ -1,0 +1,68 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 134px;
+  &__left {
+    &_logo {
+      margin-bottom: 18px;
+    };
+    &_text {
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 31px;
+    };
+    &_social-net {
+      display: flex;
+      gap: 54px;
+    };
+  };
+  &__middle {
+    &_title {
+      color: rgb(41, 47, 54);
+      font-family: DM Serif Display;
+      font-size: 25px;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 9px;
+    };
+    &_links {
+      height: 198px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    };
+    &_link {
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: left;
+    };
+  };
+  &__right {
+    &_title {
+      margin-bottom: 26px;
+      color: rgb(41, 47, 54);
+      font-family: DM Serif Display;
+      font-size: 25px;
+      font-weight: 400;
+      text-align: left;
+    };
+    &_contacts {
+      display: flex;
+      height: 200px;
+      flex-direction: column;
+      justify-content: space-between;
+    };
+    &_contact {
+      color: rgb(77, 80, 83);
+      font-family: Jost;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: left;
+    };
+  };
+};
