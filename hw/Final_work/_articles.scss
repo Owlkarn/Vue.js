@@ -7,7 +7,11 @@
     font-weight: 400;
     line-height: 125%;
     text-align: center;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
+    &_blog {
+      margin-bottom: 30px;
+      text-align: left;
+    }
   };
   &__text {
     color: rgb(77, 80, 83);
@@ -16,12 +20,15 @@
     font-weight: 400;
     line-height: 150%;
     text-align: center;
-    padding-bottom: 52px;
+    margin-bottom: 52px;
   };
   &__articles {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr));
-    grid-gap: 20px;
+    gap: 30px 28px;
+    &.blog-articles {
+      margin-bottom: 51px;
+    };
   };
   &__article {
     height: 521px;
@@ -36,6 +43,33 @@
   };
   &__article:hover .article__date-and-btn_btn {
     background: rgb(255, 255, 255);
+  };
+  &__page-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 200px;
+    &_btn {
+      border: 1px solid rgb(205, 162, 116);
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      background: rgb(255, 255, 255);
+      color: rgb(41, 47, 54);
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      transition: background-color 0.3s ease;
+      &.active-page-btn {
+        background: rgb(244, 240, 236);
+        border: none;
+      };
+    };
+    &_btn:hover {
+      background: rgb(244, 240, 236);
+      border: none;
+    };
   };
 };
 .article {
@@ -98,16 +132,10 @@
 };
 .first-article-img {
   background-image: url(./img/article_1.png);
-  background-position: -160px -63px;
-  border-radius: 45px 45px 0px 0px;
 };
 .second-article-img {
   background-image: url(./img/article_2.png);
-  background-position: -120px -45px;
-  border-radius: 45px 45px 0px 0px;
 };
 .third-article-img {
   background-image: url(./img/article_3.png);
-  background-position: -325px -140px;
-  border-radius: 45px 45px 0px 0px;
 };

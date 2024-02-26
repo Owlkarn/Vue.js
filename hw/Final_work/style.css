@@ -223,7 +223,11 @@ a {
   font-weight: 400;
   line-height: 125%;
   text-align: center;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.articles-block__title_blog {
+  margin-bottom: 30px;
+  text-align: left;
 }
 .articles-block__text {
   color: rgb(77, 80, 83);
@@ -232,12 +236,15 @@ a {
   font-weight: 400;
   line-height: 150%;
   text-align: center;
-  padding-bottom: 52px;
+  margin-bottom: 52px;
 }
 .articles-block__articles {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr));
-  grid-gap: 20px;
+  gap: 30px 28px;
+}
+.articles-block__articles.blog-articles {
+  margin-bottom: 51px;
 }
 .articles-block__article {
   height: 521px;
@@ -252,6 +259,33 @@ a {
 }
 .articles-block__article:hover .article__date-and-btn_btn {
   background: rgb(255, 255, 255);
+}
+.articles-block__page-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 200px;
+}
+.articles-block__page-buttons_btn {
+  border: 1px solid rgb(205, 162, 116);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  background: rgb(255, 255, 255);
+  color: rgb(41, 47, 54);
+  font-family: Jost;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  transition: background-color 0.3s ease;
+}
+.articles-block__page-buttons_btn.active-page-btn {
+  background: rgb(244, 240, 236);
+  border: none;
+}
+.articles-block__page-buttons_btn:hover {
+  background: rgb(244, 240, 236);
+  border: none;
 }
 
 .article__design_img {
@@ -311,20 +345,14 @@ a {
 
 .first-article-img {
   background-image: url(./img/article_1.png);
-  background-position: -160px -63px;
-  border-radius: 45px 45px 0px 0px;
 }
 
 .second-article-img {
   background-image: url(./img/article_2.png);
-  background-position: -120px -45px;
-  border-radius: 45px 45px 0px 0px;
 }
 
 .third-article-img {
   background-image: url(./img/article_3.png);
-  background-position: -325px -140px;
-  border-radius: 45px 45px 0px 0px;
 }
 
 .footer {
@@ -388,6 +416,97 @@ a {
   font-size: 22px;
   font-weight: 400;
   text-align: left;
+}
+
+.blog-main {
+  background-image: url(./img/articles-main.png);
+  height: 356px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: calc(50% - 960px);
+  padding-right: calc(50% - 960px);
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.blog-main__text {
+  padding: 41px 78px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 37px 37px 0px 0px;
+}
+.blog-main__text_title {
+  color: rgb(41, 47, 54);
+  font-family: DM Serif Display;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 125%;
+}
+.blog-main__text_desc {
+  color: rgb(77, 80, 83);
+  font-family: Jost;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+}
+
+.latest-post {
+  margin-bottom: 172px;
+}
+.latest-post__title {
+  color: rgb(41, 47, 54);
+  font-family: DM Serif Display;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 125%;
+  text-align: left;
+  margin-bottom: 27px;
+}
+.latest-post__content {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 62px;
+  box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+  padding: 22px;
+  gap: 65px;
+}
+.latest-post__content_subtitle {
+  color: rgb(41, 47, 54);
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 125%;
+  margin-bottom: 22px;
+  width: 92%;
+}
+.latest-post__content_text {
+  color: rgb(77, 80, 83);
+  font-family: Jost;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 41px;
+}
+.latest-post__content_date-and-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.latest-post__date-and-btn_date {
+  color: rgb(77, 80, 83);
+  font-family: Jost;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.latest-post__date-and-btn_btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(244, 240, 236);
 }
 
 /*# sourceMappingURL=style.css.map */
