@@ -1,8 +1,9 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  gap: 101px;
   margin-bottom: 134px;
   &__left {
+    width: 393px;
     &_logo {
       margin-bottom: 18px;
     };
@@ -20,6 +21,7 @@
     };
   };
   &__middle {
+    width: 125px;
     &_title {
       color: rgb(41, 47, 54);
       font-family: DM Serif Display;

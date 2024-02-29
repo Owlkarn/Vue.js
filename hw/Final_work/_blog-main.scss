@@ -10,6 +10,9 @@
   justify-content: center;
   align-items: flex-end;
 
+  &-details {
+    background-image: url(./img/blog_details_main.png);
+  };
   &__text {
     padding: 41px 78px;
     background-color: rgb(255, 255, 255);
