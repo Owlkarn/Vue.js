@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<!--Задание 1 -->
+<!--1. Вы разрабатываете страницу для отображения информации о товаре. -->
+<!--У вас есть объект product, который содержит информацию о товаре, включая название, цену и URL изображения товара. -->
+<!--Вам необходимо отобразить эту информацию на странице с использованием v-bind. -->
+<!--2. Добавьте кнопку, которая будет изменять цену товара. -->
+<!--При нажатии на кнопку должна генерироваться скидка на товар от 1 до 20% и обновиться цена товара в соответствии с значением скидки-->
+
+<!--Задание 2 -->
+<!--1. Вы разрабатываете простое приложение для отображения списка пользователей. -->
+<!--У вас есть массив объектов users, где каждый объект представляет одного пользователя с его именем и возрастом. -->
+<!--Вам необходимо отобразить каждого пользователя из массива в виде списка на странице.-->
+
+<!--Задание 3-->
+<!--1. Вы разрабатываете приложение для создания списка покупок. -->
+<!--У вас есть массив объектов items, где каждый объект представляет товар с его названием и количеством. -->
+<!--Вам необходимо отобразить список товаров, предоставить возможность изменять количество каждого товара и отмечать товары, которые уже куплены.-->
+
+<!--Задание 4 -->
+<!--1. Вы разрабатываете приложение для управления списком контактов. -->
+<!--У вас есть форма с полями "Имя", "Фамилия" и "Email", где пользователь может вводить информацию о новом контакте. -->
+<!--После добавления контакта он должен отображаться в списке контактов. Требуется связать форму с данными и отображать список контактов на странице.-->
+
+<body>
+<div id="app">
+    <h1>{{ product.info }}</h1>
+    <span>Price: {{ product.price }}</span>
+    <img :src="product.url" alt="Product Image">
+    <button @click="updatePrice()">Получить скидку</button>
+    <ul>
+        <li v-for="user in users"> {{ user.name }} - {{ user.age }} age</li>
+    </ul>
+    <div class="products">
+        <div class="product" v-for="product in products">
+            {{ product.name }}
+            <input min="0" type="number" v-model.lazy="product.quantity">
+            <input type="checkbox" v-model="product.bought">
+        </div>
+    </div>
+    <div class="task4">
+        <input type="text" v-model="user.firstName" placeholder="Имя">
+        <input type="text" v-model="user.lastName" placeholder="Фамилия">
+        <input type="text" v-model="user.email" placeholder="Email">
+        <button @click="getData()">Отправить</button>
+        <ul>
+            <li v-for="user in usersData">
+                {{ user.firstName }} {{ user.lastName }} {{ user.email }}
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            product: {
+                info: 'qwerty',
+                price: 1000,
+                url: 'https://example.com/product1.jpg',
+            },
+            users: [
+                { id: 1, name: 'Иван', age: 25 },
+                { id: 2, name: 'Мария', age: 30 },
+                { id: 3, name: 'Алексей', age: 35 },
+                { id: 4, name: 'Елена', age: 28 }
+            ],
+            products: [
+                { id: 1, name: 'Молоко', quantity: 2, bought: false },
+                { id: 2, name: 'Хлеб', quantity: 1, bought: true },
+                { id: 3, name: 'Яблоки', quantity: 5, bought: false },
+                { id: 4, name: 'Мясо', quantity: 0, bought: false }
+            ],
+            user: {
+                firstName:'',
+                lastName:'',
+                email:'',
+            },
+            usersData: [],
+        },
+        methods: {
+            updatePrice() {
+                this.product.price = this.product.price - this.product.price * (Math.floor(Math.random() * 20) + 1)/100;
+            },
+            getData() {
+                if (this.user.firstName !=='' && this.user.lastName !=='' && this.user.email !=='') {
+                    this.usersData.push({
+                        firstName:this.user.firstName,
+                        lastName:this.user.lastName,
+                        email:this.user.email,
+                    });
+                    this.user.firstName ='';
+                    this.user.lastName ='';
+                    this.user.email ='';
+                }
+            }
+        },
+    })
+</script>
+</body>
+</html>
+
+<!--Задание 4-->
+<!--<html>-->
+<!--<head>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="app">-->
+<!--    <form @submit="addContact">-->
+<!--        <label for="firstName">Имя:</label>-->
+<!--        <input type="text" id="firstName" v-model="newContact.firstName">-->
+
+<!--        <label for="lastName">Фамилия:</label>-->
+<!--        <input type="text" id="lastName" v-model="newContact.lastName">-->
+
+<!--        <label for="email">Email:</label>-->
+<!--        <input type="email" id="email" v-model="newContact.email">-->
+
+<!--        <button type="submit">Добавить контакт</button>-->
+<!--    </form>-->
+
+<!--    <ul>-->
+<!--        <li v-for="contact in contacts" :key="contact.email">-->
+<!--            {{ contact.firstName }} {{ contact.lastName }} - {{ contact.email }}-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!--<script>-->
+<!--    new Vue({-->
+<!--        el: '#app',-->
+<!--        data: {-->
+<!--            newContact: {-->
+<!--                firstName: '',-->
+<!--                lastName: '',-->
+<!--                email: ''-->
+<!--            },-->
+<!--            contacts: []-->
+<!--        },-->
+<!--        methods: {-->
+<!--            addContact: function(event) {-->
+<!--                event.preventDefault();-->
+<!--                if (this.isValidContact()) {-->
+<!--                    this.contacts.push({-->
+<!--                        firstName: this.newContact.firstName,-->
+<!--                        lastName: this.newContact.lastName,-->
+<!--                        email: this.newContact.email-->
+<!--                    });-->
+<!--                    this.resetForm();-->
+<!--                }-->
+<!--            },-->
+<!--            isValidContact: function() {-->
+<!--                return (-->
+<!--                    this.newContact.firstName.trim() !== '' &&-->
+<!--                    this.newContact.lastName.trim() !== '' &&-->
+<!--                    this.newContact.email.trim() !== ''-->
+<!--                );-->
+<!--            },-->
+<!--            resetForm: function() {-->
+<!--                this.newContact.firstName = '';-->
+<!--                this.newContact.lastName = '';-->
+<!--                this.newContact.email = '';-->
+<!--            }-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->
