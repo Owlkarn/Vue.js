@@ -5,6 +5,10 @@
     <HelloMessage/>
     <GalleryComponent/>
     <SortComponent/>
+    <AutentificationComponent/>
+    <CartComponent/>
+    <MortgageCalculator/>
+
   </div>
 </template>
 
@@ -13,14 +17,20 @@ import HelloWorld from './components/HelloWorld.vue'
 import HelloMessage from "@/components/HelloMessage.vue";
 import GalleryComponent from "@/components/GalleryComponent.vue";
 import SortComponent from "@/components/SortComponent.vue";
+import AutentificationComponent from "@/components/AutentificationComponent.vue";
+import CartComponent from "@/components/CartComponent.vue";
+import MortgageCalculator from "@/components/MortgageCalculator.vue";
 
 export default {
   name: 'App',
   components: {
+    MortgageCalculator,
+    CartComponent,
     SortComponent,
     GalleryComponent,
     HelloMessage,
-    HelloWorld
+    HelloWorld,
+    AutentificationComponent,
   }
 }
 </script>
